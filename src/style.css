@@ -1,0 +1,27 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar {
+  justify-content: space-between;
+}
+
+#logo {
+  border-radius: 50%;
+  height: 80px;
+}
+
+.navLinks {
+  gap: 10px;
+  align-items: center;
+}
+
+.navLinks a {
+  text-decoration: none;
+}
