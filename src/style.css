@@ -1,3 +1,14 @@
 body {
   background-color: bisque;
 }
+.food-sections {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 0.5fr;
+  grid-template-rows: 3fr 0.8fr 0.2fr;
+  gap: 0;
+  grid-template-areas:
+    'card-img card-img card-img'
+    'card-title card-title card-title'
+    'btn-recipe . btn-liked';
+  border: #dbdbdb 0.5px solid;
+}
