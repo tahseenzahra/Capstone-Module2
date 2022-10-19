@@ -1,0 +1,49 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  scroll-behavior: smooth;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+#navbar-container {
+  padding: 24px;
+}
+
+.navbar {
+  justify-content: space-between;
+}
+
+#logo {
+  border-radius: 50%;
+  height: 80px;
+  cursor: pointer;
+}
+
+.navLinks {
+  gap: 10px;
+  align-items: center;
+}
+
+.navLinks a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 20px;
+  color: #344563;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: underline;
+}
