@@ -3,6 +3,14 @@
   padding: 0%;
 }
 
+body {
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  scroll-behavior: smooth;
+}
+
 .flexRow {
   display: flex;
   flex-direction: row;
@@ -15,6 +23,7 @@
 #logo {
   border-radius: 50%;
   height: 80px;
+  cursor: pointer;
 }
 
 .navLinks {
@@ -24,4 +33,13 @@
 
 .navLinks a {
   text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  color: #344563;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: underline;
 }
