@@ -1,5 +1,19 @@
-body {
-  background-color: bisque;
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar {
+  justify-content: space-between;
+}
+
+.navLinks {
+  gap: 10px;
 }
 .food-sections {
   display: grid;
