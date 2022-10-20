@@ -8,5 +8,3 @@ projLogo.setAttribute('src', logo);
 document.addEventListener('DOMContentLoaded', () => {
   displayCards();
 });
-
-
