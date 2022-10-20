@@ -1,23 +1,23 @@
 const mealApi = async () => {
   const fetchResult = await fetch(
-    "https://www.themealdb.com/api/json/v1/1/categories.php"
+    'https://www.themealdb.com/api/json/v1/1/categories.php'
   );
   const showCategory = await fetchResult.json();
   return showCategory;
 };
 
 const foodCard = (item) => {
-  const div = `<div class="food-box">
-  <img src="${item.strCategoryThumb}" class="img" alt="food-img" />
- <div class="card-body">
+  const div = `<div class='food-box'>
+  <img src='${item.strCategoryThumb}' class='img' alt='food-img' />
+ <div class='card-body'>
   <p>${item.strCategory}</p>
 </div>
-<div class="card-content">
-  <div class="card-action">
-    <button class="review-btn">Review</button>
+<div class='card-content'>
+  <div class='card-action'>
+    <button class='review-btn'>Review</button>
    </div>
-  <div class="like-content">
-    <i class="fa-regular fa-heart"></i>
+  <div class='like-content'>
+    <i class='fa-regular fa-heart'></i>
     <span>5 likes</span>
   </div>
  </div>
@@ -36,3 +36,4 @@ const displayCards = async () => {
 }
 
 export { mealApi, displayCards };
+
