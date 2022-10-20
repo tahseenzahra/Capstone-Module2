@@ -1,6 +1,6 @@
 const mealApi = async () => {
   const fetchResult = await fetch(
-    "https://www.themealdb.com/api/json/v1/1/categories.php"
+    'https://www.themealdb.com/api/json/v1/1/categories.php',
   );
   const showCategory = await fetchResult.json();
   return showCategory;
@@ -29,8 +29,8 @@ const displayCards = async () => {
   const response = await mealApi();
   const { categories } = response;
   const results = categories.map((category) => foodCard(category));
-  const cardWrapper = document.querySelector(".display");
-  cardWrapper.innerHTML = results.join("");
+  const cardWrapper = document.querySelector('.display');
+  cardWrapper.innerHTML = results.join('');
 };
 
 export { mealApi, displayCards };
