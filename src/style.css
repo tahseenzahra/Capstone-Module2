@@ -4,7 +4,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-style: normal;
   scroll-behavior: smooth;
 }
@@ -51,7 +51,7 @@ a:hover {
   grid-template-columns: auto auto auto;
   gap: 40px;
   justify-content: center;
-  }
+}
 
 .food-box {
   border: 1px solid grey;
