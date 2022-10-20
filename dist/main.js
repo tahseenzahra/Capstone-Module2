@@ -10,16 +10,6 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./modules/display.js":
-/*!****************************!*\
-  !*** ./modules/display.js ***!
-  \****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"displayCards\": () => (/* binding */ displayCards),\n/* harmony export */   \"mealApi\": () => (/* binding */ mealApi)\n/* harmony export */ });\nconst mealApi = async () => {\r\n  const fetchResult = await fetch(\r\n    \"https://www.themealdb.com/api/json/v1/1/categories.php\"\r\n  );\r\n  const showCategory = await fetchResult.json();\r\n  return showCategory;\r\n};\r\n\r\nconst foodCard = (item) => {\r\n  const div = `<div class=\"food-box\">\r\n  <img src=\"${item.strCategoryThumb}\" class=\"img\" alt=\"food-img\" />\r\n <div class=\"card-body\">\r\n  <p>${item.strCategory}</p>\r\n</div>\r\n<div class=\"card-content\">\r\n  <div class=\"card-action\">\r\n    <button class=\"review-btn\">Review</button>\r\n   </div>\r\n  <div class=\"flexRow\">\r\n    <i class=\"fa-regular fa-heart\"></i>\r\n    <span>5 likes</span>\r\n  </div>\r\n </div>\r\n</div>`;\r\nreturn div;\r\n}\r\n\r\nconst displayCards = async () => {\r\n  const response = await mealApi();\r\n  const categories = response.categories;\r\n  const results = categories.map((category) => {\r\n    return foodCard(category);\r\n  });\r\n  const cardWrapper = document.querySelector('.display');\r\n  cardWrapper.innerHTML = results.join('');\r\n}\r\n\r\n\r\n\n\n//# sourceURL=webpack://webpack-demo/./modules/display.js?");
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/style.css":
 /*!*************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/style.css ***!
@@ -126,7 +116,27 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_display_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/display.js */ \"./modules/display.js\");\n\r\n\r\n\r\ndocument.addEventListener(\"DOMContentLoaded\", () => {\r\n  (0,_modules_display_js__WEBPACK_IMPORTED_MODULE_1__.displayCards)();\r\n});\r\n\n\n//# sourceURL=webpack://webpack-demo/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _images_chef_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./images/chef.png */ \"./src/images/chef.png\");\n/* harmony import */ var _modules_display_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/display.js */ \"./src/modules/display.js\");\n\n\n\n\nconst projLogo = document.querySelector('#logo');\nprojLogo.setAttribute('src', _images_chef_png__WEBPACK_IMPORTED_MODULE_1__);\n\ndocument.addEventListener('DOMContentLoaded', () => {\n  (0,_modules_display_js__WEBPACK_IMPORTED_MODULE_2__.displayCards)();\n});\n\n\n\n//# sourceURL=webpack://webpack-demo/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/display.js":
+/*!********************************!*\
+  !*** ./src/modules/display.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"displayCards\": () => (/* binding */ displayCards),\n/* harmony export */   \"mealApi\": () => (/* binding */ mealApi)\n/* harmony export */ });\nconst mealApi = async () => {\n  const fetchResult = await fetch(\n    'https://www.themealdb.com/api/json/v1/1/categories.php',\n  );\n  const showCategory = await fetchResult.json();\n  return showCategory;\n};\n\nconst foodCard = (item) => {\n  const div = `<div class='food-box'>\n  <img src='${item.strCategoryThumb}' class='img' alt='food-img' />\n  <div class='card-body'>\n    <p>${item.strCategory}</p>\n  </div>\n  <div class='card-content'>\n    <div class='card-action'>\n      <button class='review-btn'>Review</button>\n    </div>\n    <div class='like-content'>\n      <i class='fa-regular fa-heart'></i>\n      <span>5 likes</span>\n    </div>\n  </div>\n  </div>`;\n  return div;\n};\n\nconst displayCards = async () => {\n  const response = await mealApi();\n  const { categories } = response;\n  const results = categories.map((category) => foodCard(category));\n  const cardWrapper = document.querySelector('.display');\n  cardWrapper.innerHTML = results.join('');\n};\n\n\n\n\n//# sourceURL=webpack://webpack-demo/./src/modules/display.js?");
+
+/***/ }),
+
+/***/ "./src/images/chef.png":
+/*!*****************************!*\
+  !*** ./src/images/chef.png ***!
+  \*****************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"a80c552b96bdc400895c.png\";\n\n//# sourceURL=webpack://webpack-demo/./src/images/chef.png?");
 
 /***/ })
 
@@ -181,6 +191,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -195,6 +217,26 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/nonce */
