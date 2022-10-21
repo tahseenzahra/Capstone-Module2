@@ -61,11 +61,12 @@ const getData = async (IdMeal) => {
       overlay.innerHTML = div;
 
       // Create DOM Elements for User Comments
-      const displayComments = document.getElementById('review-txtarea');
+      // const displayComments = document.getElementById('review-txtarea');
+      
       const commentCount = document.getElementById('review-count');
-      let reviewCounts = commData.length;
+      const reviewCounts = commData.length;
       if (!(reviewCounts > 0)) {
-        commCounts = 0;
+        reviewCounts = 0;
         commentCount.innerText = `Reviews (${reviewCounts})`;
         // displayComments.append(commentCount);
       } else {
@@ -87,28 +88,24 @@ const getData = async (IdMeal) => {
         }
       });
 
-      setTimeout(() => { 
+      setTimeout(() => {
         const commSubmitBtn = document.getElementById('submit-btn');
-        console.log("here is submit btn",commSubmitBtn);
-      const userName = document.getElementById('form-name');
-      const review = document.getElementById('form-review');
-      const itemId = IdMeal;
-      const Reviewcontainer = document.querySelector('#reviews-list');
-      commSubmitBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        if (!(userName.value === '' || review.value === '')) {
-          console.log(userName.value);
-          console.log(review.value);
-          PostReviewData(itemId, userName.value, review.value);
-          userName.value = '';
-          review.value = '';
-        }
-      });
+        const userName = document.getElementById('form-name');
+        const review = document.getElementById('form-review');
+        const itemId = IdMeal;
+        // const Reviewcontainer = document.querySelector('#reviews-list');
+        commSubmitBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (!(userName.value === '' || review.value === '')) {
+            PostReviewData(itemId, userName.value, review.value);
+            userName.value = '';
+            review.value = '';
+          }
+        });
       }, 5000);
-
     })
     .catch((error) => {
-      console.warn(`warning error:${error}`);
+      // console.warn(`warning error:${error}`);
     });
 };
 const PopupWindowOn = (id) => {

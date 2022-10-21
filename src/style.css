@@ -116,6 +116,7 @@ footer {
 
 .PopupBg {
   /* @ should be none when pg loaded */
+
   /* display: none; */
   background: rgba(189, 189, 190, 0.226);
   backdrop-filter: blur(7px);
@@ -130,9 +131,9 @@ footer {
   box-sizing: content-box;
   padding: 34px;
   overflow: scroll;
- }
+}
 
- .popup-detailCard {
+.popup-detailCard {
   margin: auto;
   height: 90%;
   width: 50%;
@@ -142,26 +143,27 @@ footer {
   box-sizing: border-box;
   border-radius: 16px;
   overflow-y: scroll;
+
   /* margin: 20vh 30vh; */
- }
+}
 
-
- .prj-popup-header {
+.prj-popup-header {
   justify-content: space-between;
   margin: 10px;
- }
+}
 
- .ProductPrice {
+.ProductPrice {
   /* justify-content: center;
   align-items: center; */
   display: grid;
   grid-template-columns: 1fr 1fr;
+
   /* grid-row: 1fr 1fr; */
   margin: auto;
   font-weight: 500;
   font-size: 17px;
   line-height: 24px;
- }
+}
 
 .reviewForm {
   display: flex;
@@ -169,7 +171,7 @@ footer {
   gap: 1rem;
   margin-top: 1rem;
   padding: 1rem 1rem 1rem 0;
-  box-shadow: 12px 0 20px -12px
+  box-shadow: 12px 0 20px -12px;
 }
 
 input {
@@ -206,7 +208,7 @@ input {
 }
 
 #reviews-list {
-  padding: 8px 0px;
+  padding: 8px 0;
 }
 
 li {

@@ -6,10 +6,8 @@ const mealApi = async () => {
     'https://www.themealdb.com/api/json/v1/1/search.php?f=e',
   );
   const showCategory = await fetchResult.json();
-  console.log(showCategory);
   return showCategory;
 };
-
 
 const foodCard = (item) => {
   const div = `<div class='food-box'>
@@ -28,21 +26,16 @@ const foodCard = (item) => {
   </div>
   </div>`;
   return div;
-
 };
 
 setTimeout(() => {
   const ReviewBtn = Array.from(document.querySelectorAll('.review-btn'));
-console.log(ReviewBtn);
   ReviewBtn.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        console.log(btn.id);
-        popup(btn.id);
-
-      });
+    btn.addEventListener('click', () => {
+      popup(btn.id);
     });
- }, 2000); 
-  
+  });
+}, 2000);
 
 const displayCards = async () => {
   const response = await mealApi();
