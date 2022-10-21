@@ -59,12 +59,10 @@ const getData = async (IdMeal) => {
   </div>`;
 
       overlay.innerHTML = div;
-
       // Create DOM Elements for User Comments
       // const displayComments = document.getElementById('review-txtarea');
-      
       const commentCount = document.getElementById('review-count');
-      const reviewCounts = commData.length;
+      let reviewCounts = commData.length;
       if (!(reviewCounts > 0)) {
         reviewCounts = 0;
         commentCount.innerText = `Reviews (${reviewCounts})`;
@@ -103,10 +101,10 @@ const getData = async (IdMeal) => {
           }
         });
       }, 5000);
-    })
-    .catch((error) => {
-      // console.warn(`warning error:${error}`);
     });
+  // .catch((error) => {
+  //  console.warn(`warning error:${error}`);
+  // });
 };
 const PopupWindowOn = (id) => {
   if (overlay.style.display !== 'block') {
