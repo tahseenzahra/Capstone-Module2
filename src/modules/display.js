@@ -78,7 +78,11 @@ const displayCards = async (items) => {
   });
   const cardWrapper = document.querySelector('.display');
   cardWrapper.innerHTML = allMealCat;
+
+  // display number of categories
+  const counter = document.querySelectorAll
   
+  // Adding likes
   const cards = document.querySelectorAll('.food-box');
   cards.forEach((card) => {
     card.addEventListener('click', (e) => {
