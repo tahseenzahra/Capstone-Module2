@@ -57,7 +57,7 @@ const foodCard = (item) => {
       <button class='review-btn' id="${item.idMeal}">Review</button>
     </div>
     <div class='like-content' id=${item.idMeal}>
-      <i class='fa-regular fa-heart'></i>
+      <i class='fa-regular fa-heart' id="like-btn"></i>
       <span>${item.countLikes}</span>
     </div>
   </div>

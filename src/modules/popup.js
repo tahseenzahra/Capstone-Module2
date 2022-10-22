@@ -60,13 +60,11 @@ const getData = async (IdMeal) => {
 
       overlay.innerHTML = div;
       // Create DOM Elements for User Comments
-      // const displayComments = document.getElementById('review-txtarea');
       const commentCount = document.getElementById('review-count');
       let reviewCounts = commData.length;
       if (!(reviewCounts > 0)) {
         reviewCounts = 0;
         commentCount.innerText = `Reviews (${reviewCounts})`;
-        // displayComments.append(commentCount);
       } else {
         commentCount.innerText = `Reviews  (${reviewCounts})`;
         const Reviewul = document.getElementById('reviews-list');
@@ -91,7 +89,6 @@ const getData = async (IdMeal) => {
         const userName = document.getElementById('form-name');
         const review = document.getElementById('form-review');
         const itemId = IdMeal;
-        // const Reviewcontainer = document.querySelector('#reviews-list');
         commSubmitBtn.addEventListener('click', (e) => {
           e.preventDefault();
           if (!(userName.value === '' || review.value === '')) {
@@ -102,9 +99,6 @@ const getData = async (IdMeal) => {
         });
       }, 5000);
     });
-  // .catch((error) => {
-  //  console.warn(`warning error:${error}`);
-  // });
 };
 const PopupWindowOn = (id) => {
   if (overlay.style.display !== 'block') {

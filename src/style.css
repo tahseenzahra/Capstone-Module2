@@ -52,18 +52,28 @@ a:hover {
 
 .display {
   display: grid;
-  grid-template-columns: auto auto auto auto;
   gap: 40px;
   justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 }
 
 .food-box {
+  align-self: center;
+  justify-self: center;
   border: 1px solid grey;
   padding-bottom: 10px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   overflow: hidden;
   max-width: 310px;
+}
+
+#like-btn {
+  cursor: pointer;
+}
+
+#like-btn:hover {
+  color: #ce3e51;
 }
 
 .img {
@@ -99,11 +109,6 @@ a:hover {
   padding: 0 15px;
 }
 
-.review-btn {
-  font-size: 15px;
-  padding: 5px 10px;
-}
-
 footer {
   padding: 15px;
   margin-top: 50px;
@@ -119,9 +124,6 @@ footer {
 }
 
 .PopupBg {
-  /* @ should be none when pg loaded */
-
-  /* display: none; */
   background: rgba(189, 189, 190, 0.226);
   backdrop-filter: blur(7px);
   width: 100%;
@@ -147,8 +149,6 @@ footer {
   box-sizing: border-box;
   border-radius: 16px;
   overflow-y: scroll;
-
-  /* margin: 20vh 30vh; */
 }
 
 .prj-popup-header {
@@ -157,12 +157,8 @@ footer {
 }
 
 .ProductPrice {
-  /* justify-content: center;
-  align-items: center; */
   display: grid;
   grid-template-columns: 1fr 1fr;
-
-  /* grid-row: 1fr 1fr; */
   margin: auto;
   font-weight: 500;
   font-size: 17px;
@@ -184,7 +180,8 @@ input {
   padding: 0.25rem 0.5rem;
 }
 
-.button {
+.button,
+.review-btn {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -200,7 +197,8 @@ input {
   cursor: pointer;
 }
 
-.button:hover {
+.button:hover,
+.review-btn:hover {
   color: white;
   background-color: #ce4c5d;
   border: 1px solid #ce3e51;
