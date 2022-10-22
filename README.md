@@ -18,6 +18,10 @@ Chef - A web based app that contains the food items and each card have the optio
 
 ![screenshot](./src/images/chefweb.png)
 
+- Popup View of home page
+
+![screenshot](./src/images/popupchef.png)
+
 - Mobile view of About page
 
 ![screenshot](./src/images/chefwebmobile.png)
