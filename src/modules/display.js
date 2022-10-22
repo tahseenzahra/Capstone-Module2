@@ -1,12 +1,43 @@
 import popup from './popup.js';
-// import reviewCounter from './modules/reviewCounter.js';
+import { getLikes, addLike } from './likes.js';
+
+let mealCatArray = [];
+
+const newMealObj = (mealCatArray, likes = []) => {
+  if (mealCatArray.length) {
+    const newMeals = mealCatArray.map((mealCat) => {
+      const numOfLikes = likes.find((like) => {
+        if (like.item_id === mealCat.idMeal) {
+          return like;
+        }
+      });
+      return {
+        ...mealCat,
+        countLikes: numOfLikes ? numOfLikes.likes : 0,
+      };
+    });
+    newMeals.length && displayCards(newMeals);
+  }
+};
 
 const mealApi = async () => {
   const fetchResult = await fetch(
     'https://www.themealdb.com/api/json/v1/1/search.php?f=e',
   );
-  const showCategory = await fetchResult.json();
-  return showCategory;
+  await fetchResult.json()
+    .then((data) => {
+    mealCatArray = data.meals;
+    return getLikes();
+  })
+  .then((res) => {
+    res.json()
+      .then((likeData) => {
+        newMealObj(mealCatArray, likeData);
+      })
+      .catch(() => {
+        newMealObj(mealCatArray, []);
+      });
+  });
 };
 
 const foodCard = (item) => {
@@ -19,9 +50,9 @@ const foodCard = (item) => {
     <div class='card-action'>
       <button class='review-btn' id="${item.idMeal}">Review</button>
     </div>
-    <div class='like-content'>
+    <div class='like-content' id=${item.idMeal}>
       <i class='fa-regular fa-heart'></i>
-      <span>5 likes</span>
+      <span>${item.countLikes}</span>
     </div>
   </div>
   </div>`;
@@ -37,12 +68,31 @@ setTimeout(() => {
   });
 }, 2000);
 
-const displayCards = async () => {
-  const response = await mealApi();
-  const { meals } = response;
-  const results = meals.map((category) => foodCard(category));
+
+// Display Categories In Browser
+const displayCards = async (items) => {
+  let allMealCat = '';
+  items?.forEach((item) => {
+    const list = foodCard(item);
+    allMealCat += list;
+  });
   const cardWrapper = document.querySelector('.display');
-  cardWrapper.innerHTML = results.join('');
+  cardWrapper.innerHTML = allMealCat;
+  
+  const cards = document.querySelectorAll('.food-box');
+  cards.forEach((card) => {
+    card.addEventListener('click', (e) => {
+     if (e.target.classList.contains('fa-heart')) {
+      const catID = e.target.parentNode.getAttribute('id');
+      addLike(catID).then(() => {
+        const currLikeNo = Number(e.target.nextElementSibling.textContent);
+        e.target.nextElementSibling.textContent = String(currLikeNo + 1);
+      });
+     }
+    });
+  });
 };
 
-export { mealApi, displayCards };
+document.addEventListener('DOMContentLoaded', mealApi);
+
+export default displayCards;
