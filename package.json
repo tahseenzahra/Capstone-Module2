@@ -42,5 +42,8 @@
   "bugs": {
     "url": "https://github.com/tahseenzahra/Capstone-Module2/issues"
   },
-  "homepage": "https://github.com/tahseenzahra/Capstone-Module2#readme"
+  "homepage": "https://github.com/tahseenzahra/Capstone-Module2#readme",
+  "dependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.19.6"
+  }
 }

@@ -46,6 +46,10 @@ a:hover {
   text-decoration: underline;
 }
 
+.navLinks a:nth-child(1) {
+  margin-right: 10px;
+}
+
 .display {
   display: grid;
   grid-template-columns: auto auto auto auto;

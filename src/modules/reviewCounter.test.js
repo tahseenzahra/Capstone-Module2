@@ -1,25 +1,25 @@
-// import reviewCounter from './reviewCounter.js';
-// import mockReviews from '../__mocks__/mockReviews.js';
+import reviewCounter from './reviewCounter.js';
 
-// describe('Test the count function', () => {
-//   test('No items', () => {
-//     const arr = [];
-//     expect(reviewCounter(arr)).toBe(0);
-//   });
+describe('Test the count function', () => {
+  test('No items', () => {
+    const arr = [];
+    expect(reviewCounter(arr)).toBe(0);
+  });
 
-//   test('6 items', () => {
-//     const arr = [
-// { idMeal: '52791' },
-// { idMeal: '52791' },
-// { idMeal: '52791' },
-// { idMeal: '52791' },
-// { idMeal: '52791' },
-// { idMeal: '52791' }];
-//     expect(reviewCounter(arr)).toBe(6);
-//   });
-// });
+  test('6 items', () => {
+    const arr = [
+      { idMeal: '52791' },
+      { idMeal: '52791' },
+      { idMeal: '52791' },
+      { idMeal: '52791' },
+      { idMeal: '52791' },
+      { idMeal: '52791' },
+    ];
+    expect(reviewCounter(arr)).toBe(6);
+  });
+});
 
-// // Testing for User Comments
+// Testing for User Comments
 // describe('Test for Count of reviews ', () => {
 //   test('Test for Item-Id 1 ', () => {
 //     expect(reviewCounter(mockReviews[0].comments)).toBe(4);
