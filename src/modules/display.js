@@ -1,5 +1,6 @@
 import popup from './popup.js';
 import { getLikes, addLike } from './likes.js';
+import getNumberOfCat from './categoryCounter.js';
 
 let mealCatArray = [];
 
@@ -80,7 +81,8 @@ const displayCards = async (items) => {
   cardWrapper.innerHTML = allMealCat;
 
   // display number of categories
-  const counter = document.querySelectorAll
+  const counter = document.querySelector('#counter');
+  counter.textContent = getNumberOfCat(cardWrapper.children);
   
   // Adding likes
   const cards = document.querySelectorAll('.food-box');

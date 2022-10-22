@@ -42,6 +42,10 @@ body {
   cursor: pointer;
 }
 
+.navLinks a:nth-child(1) {
+  margin-right: 10px;
+}
+
 a:hover {
   text-decoration: underline;
 }
