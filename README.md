@@ -28,11 +28,11 @@ Chef - A web based app that contains the food items and each card have the optio
 
 ## Video Presentation
 
-[Click here to view]()
+[We explaining the project](https://drive.google.com/file/d/1aZ16KxB1KhZuVXugWidReHjAQfW_BP9E/view?usp=sharing)
 
 ## Live Demo
 
-[Click here to view](not available)
+[Live link of Capstone](not available)
 
 ## Getting Started
 
