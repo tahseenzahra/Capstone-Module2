@@ -52,10 +52,9 @@ a:hover {
 
 .display {
   display: grid;
-  grid-template-columns: auto auto auto auto;
   gap: 40px;
   justify-content: center;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 }
 
 .food-box {
