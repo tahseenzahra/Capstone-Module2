@@ -1,5 +1,6 @@
 import '../style.css';
 import PostReviewData from './postreview.js';
+import reviewCounter from './reviewCounter.js';
 
 const overlay = document.getElementById('overlay');
 const getData = async (IdMeal) => {
@@ -63,7 +64,7 @@ const getData = async (IdMeal) => {
       // const displayReview = document.getElementById('review-txtarea');
       
       const commentCount = document.getElementById('review-count');
-      let reviewCounts = commData.length;
+      let reviewCounts = reviewCounter(commData);
       if (!(reviewCounts > 0)) {
         reviewCounts = 0;
         commentCount.innerText = `Reviews (${reviewCounts})`;
