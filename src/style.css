@@ -180,7 +180,8 @@ input {
   padding: 0.25rem 0.5rem;
 }
 
-.button {
+.button,
+.review-btn {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -196,7 +197,8 @@ input {
   cursor: pointer;
 }
 
-.button:hover {
+.button:hover,
+.review-btn:hover {
   color: white;
   background-color: #ce4c5d;
   border: 1px solid #ce3e51;
