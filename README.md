@@ -20,7 +20,7 @@ Chef - A web based app that contains the food items and each card have the optio
 
 - Mobile view of About page
 
-![screenshot](./images/capstone-Mobile.png)
+![screenshot](./src/images/chefwebmobile.png)
 
 ## Video Presentation
 
