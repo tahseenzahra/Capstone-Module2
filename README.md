@@ -46,6 +46,12 @@ View the file through the source code.
 - Twitter: [@tahseen1zahra](https://twitter.com/tahseen1zahra)
 - LinkedIn: [@tahseenzahra](https://www.linkedin.com/in/tahseenzahra/)
 
+👤 **Joel Kugonza**
+
+- GitHub: [@joelkugonza](https://github.com/Joel-100)
+- Twitter: [@joelkugonza](https://twitter.com/JoelKugonza)
+- LinkedIn: [@joelkugonza](https://www.linkedin.com/in/joel-kugonza-879211190/)
+
 
 ## 🤝 Contributing
 
