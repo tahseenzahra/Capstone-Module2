@@ -1,5 +1,4 @@
 const URL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/RKHWm1KUzqGmx0UP3nkk/likes';
-const BASE = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi';
 
 // Get All Likes
 const getLikes = async () => {
@@ -13,8 +12,8 @@ const addLike = async (id) => {
     method: 'POST',
     headers: { 'Content-type': 'application/json' },
     body: JSON.stringify({
-      item_id: id
-    })
+      item_id: id,
+    }),
   });
   return response.text();
 };

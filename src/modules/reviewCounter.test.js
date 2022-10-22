@@ -13,7 +13,7 @@ describe('Test the count function', () => {
       { idMeal: '52791' },
       { idMeal: '52791' },
       { idMeal: '52791' },
-      { idMeal: '52791' }
+      { idMeal: '52791' },
     ];
     expect(reviewCounter(arr)).toBe(6);
   });

@@ -1,3 +1,8 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable consistent-return */
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-use-before-define */
+
 import popup from './popup.js';
 import { getLikes, addLike } from './likes.js';
 import getNumberOfCat from './categoryCounter.js';
@@ -27,18 +32,18 @@ const mealApi = async () => {
   );
   await fetchResult.json()
     .then((data) => {
-    mealCatArray = data.meals;
-    return getLikes();
-  })
-  .then((res) => {
-    res.json()
-      .then((likeData) => {
-        newMealObj(mealCatArray, likeData);
-      })
-      .catch(() => {
-        newMealObj(mealCatArray, []);
-      });
-  });
+      mealCatArray = data.meals;
+      return getLikes();
+    })
+    .then((res) => {
+      res.json()
+        .then((likeData) => {
+          newMealObj(mealCatArray, likeData);
+        })
+        .catch(() => {
+          newMealObj(mealCatArray, []);
+        });
+    });
 };
 
 const foodCard = (item) => {
@@ -69,7 +74,6 @@ setTimeout(() => {
   });
 }, 2000);
 
-
 // Display Categories In Browser
 const displayCards = async (items) => {
   let allMealCat = '';
@@ -83,18 +87,18 @@ const displayCards = async (items) => {
   // display number of categories
   const counter = document.querySelector('#counter');
   counter.textContent = getNumberOfCat(cardWrapper.children);
-  
+
   // Adding likes
   const cards = document.querySelectorAll('.food-box');
   cards.forEach((card) => {
     card.addEventListener('click', (e) => {
-     if (e.target.classList.contains('fa-heart')) {
-      const catID = e.target.parentNode.getAttribute('id');
-      addLike(catID).then(() => {
-        const currLikeNo = Number(e.target.nextElementSibling.textContent);
-        e.target.nextElementSibling.textContent = String(currLikeNo + 1);
-      });
-     }
+      if (e.target.classList.contains('fa-heart')) {
+        const catID = e.target.parentNode.getAttribute('id');
+        addLike(catID).then(() => {
+          const currLikeNo = Number(e.target.nextElementSibling.textContent);
+          e.target.nextElementSibling.textContent = String(currLikeNo + 1);
+        });
+      }
     });
   });
 };
