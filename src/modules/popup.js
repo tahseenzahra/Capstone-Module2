@@ -60,6 +60,8 @@ const getData = async (IdMeal) => {
 
       overlay.innerHTML = div;
       // Create DOM Elements for User Comments
+      // const displayReview = document.getElementById('review-txtarea');
+      
       const commentCount = document.getElementById('review-count');
       let reviewCounts = commData.length;
       if (!(reviewCounts > 0)) {
@@ -93,6 +95,19 @@ const getData = async (IdMeal) => {
           e.preventDefault();
           if (!(userName.value === '' || review.value === '')) {
             PostReviewData(itemId, userName.value, review.value);
+
+            let today = new Date();
+          const dd = String(today.getDate()).padStart(2, '0');
+          const mm = String(today.getMonth() + 1).padStart(2, '0');
+          const yyyy = today.getFullYear();
+          today = `${yyyy}-${mm}-${dd}`;
+          reviewCounts += 1;
+          commentCount.innerText = `Reviews (${reviewCounts})`;
+          const Reviewul = document.getElementById('reviews-list');
+          const reviewDetail = document.createElement('li');
+          reviewDetail.innerText = `${today} ${userName.value}: ${review.value}`;
+          Reviewul.append(reviewDetail);
+
             userName.value = '';
             review.value = '';
           }
